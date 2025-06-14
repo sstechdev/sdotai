@@ -119,21 +119,21 @@ export default function ContactPage() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center rounded-full border border-border/50 bg-muted/30 px-4 py-2 text-sm font-medium text-muted-foreground mb-8">
                 <span className="relative flex h-2 w-2 mr-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--green-accent)] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--green-accent)]"></span>
                 </span>
                 Let's Connect
               </div>
               <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-                Get in <span className="font-medium text-primary">Touch</span>
+                My <span className="font-medium text-[var(--green-accent)]">Info</span>
               </h1>
               <p className="text-muted-foreground/80 text-lg font-light max-w-2xl mx-auto leading-relaxed">
-                You can reach me from any plataform below, i'll answer as soon as posible!
+                You can reach me from any plataform below, i'll answer as soon as possible!
               </p>
             </div>
 
             <p className="text-muted-foreground/80 text-sm mb-6">
-              Feel free to reach out to me for collaborations, inquiries, or just to say hello!
+              Feel free to reach out to me for collaborations, inquiries, or questions.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -141,16 +141,16 @@ export default function ContactPage() {
                 <h3 className="text-xl font-light text-foreground mb-4">Contact Information</h3>
                 <div className="space-y-3 text-muted-foreground/90 text-sm">
                   <div className="flex items-center">
-                    <Mail className="mr-3 h-5 w-5 text-primary" />
+                    <Mail className="mr-3 h-5 w-5 text-[var(--green-accent)]" />
                     <p>sebsalgado44@gmail.com</p>
                   </div>
                   <div className="flex items-center">
-                    <MapPin className="mr-3 h-5 w-5 text-primary" />
-                    <p>Madrid, Spain</p>
+                    <MapPin className="mr-3 h-5 w-5 text-[var(--green-accent)]" />
+                    <p>The World, Online</p>
                   </div>
                   <div className="flex items-center">
-                    <Briefcase className="mr-3 h-5 w-5 text-primary" />
-                    <p>Open to new opportunities</p>
+                    <Briefcase className="mr-3 h-5 w-5 text-[var(--green-accent)]" />
+                    <p>Open to interesting opportunities</p>
                   </div>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function ContactPage() {
                 {/* Contact Information */}
                 <div className="mb-16">
                   <h2 className="text-2xl font-light mb-8 text-center tracking-tight">
-                    Contact <span className="font-medium text-primary">Information</span>
+                    Contact <span className="font-medium text-[var(--green-accent)]">Information</span>
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {contactInfo.map((contact) => {
@@ -169,13 +169,13 @@ export default function ContactPage() {
                       return (
                         <Card
                           key={contact.id}
-                          className="border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20"
+                          className="border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-[var(--green-accent)]/5 transition-all duration-300 hover:border-[var(--green-accent)]/20"
                         >
                           <CardContent className="p-4">
                             <div className="flex items-center justify-between">
                               <div className="flex items-center space-x-3 flex-1 min-w-0">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                  <Icon className="h-5 w-5 text-primary" />
+                                <div className="w-10 h-10 rounded-full bg-[var(--green-accent)]/10 flex items-center justify-center flex-shrink-0">
+                                  <Icon className="h-5 w-5 text-[var(--green-accent)]" />
                                 </div>
                                 <div className="min-w-0 flex-1">
                                   <p className="text-sm font-medium text-muted-foreground">{contact.label}</p>
@@ -211,7 +211,7 @@ export default function ContactPage() {
             <div className="mb-16">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-light mb-4 tracking-tight">
-                  Frequently Asked <span className="font-medium text-primary">Questions</span>
+                  Frequently Asked <span className="font-medium text-[var(--green-accent)]">Questions</span>
                 </h2>
                 <p className="text-muted-foreground/80 font-light">Common questions about my services and expertise.</p>
               </div>
@@ -231,21 +231,21 @@ export default function ContactPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
+            <div className="text-center bg-gradient-to-r from-[var(--green-accent)]/5 to-[var(--green-accent)]/10 rounded-2xl p-8 border border-[var(--green-accent)]/20">
               <h2 className="text-2xl font-light mb-4 tracking-tight">
-                Ready to start your <span className="font-medium text-primary">project</span>?
+                Ready to start your <span className="font-medium text-[var(--green-accent)]">project</span>?
               </h2>
               <p className="text-muted-foreground/80 mb-6 font-light">
                 Whether you need AI integration, cloud infrastructure, or full-stack development, I'm here to help.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="bg-[var(--green-accent)] text-[var(--green-accent-foreground)] hover:bg-[var(--green-accent)]/90">
                   <a href="mailto:sebsalgado44@gmail.com">
                     <Mail className="mr-2 h-4 w-4" />
                     Send Email
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-border/50 hover:border-primary/50">
+                <Button asChild variant="outline" size="lg" className="border-border/50 hover:border-[var(--green-accent)]/50">
                   <Link href="/services">View My Services</Link>
                 </Button>
               </div>

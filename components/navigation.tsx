@@ -28,7 +28,7 @@ export function Navigation({ conversationStarted }: { conversationStarted: boole
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="text-xl tracking-wide group">
-          <p className="text-foreground font-light text-2xl">sebastian</p>
+          <p className="text-foreground font-light text-2xl">Sebastian.<span className="font-medium text-[var(--green-accent)]">ai</span></p>
         </Link>
 
         <nav className={cn(
@@ -38,7 +38,7 @@ export function Navigation({ conversationStarted }: { conversationStarted: boole
           <Button
             key="services"
             variant="ghost"
-            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
+            className="text-muted-foreground hover:text-[var(--green-accent)] transition-colors text-sm px-2"
             asChild
           >
             <Link href="/services">Services</Link>
@@ -46,23 +46,16 @@ export function Navigation({ conversationStarted }: { conversationStarted: boole
           <Button
             key="projects"
             variant="ghost"
-            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
+            className="text-muted-foreground hover:text-[var(--green-accent)] transition-colors text-sm px-2"
             asChild
           >
-            <Link href="/projects">Projects</Link>
-          </Button>
-          <Button
-            key="about"
-            variant="ghost"
-            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
-            asChild
-          >
+            
             <Link href="/about">About</Link>
           </Button>
           <Button
             key="contact"
             variant="ghost"
-            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
+            className="text-muted-foreground hover:text-[var(--green-accent)] transition-colors text-sm px-2"
             asChild
           >
             <Link href="/contact">Contact</Link>

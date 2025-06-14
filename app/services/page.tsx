@@ -87,13 +87,13 @@ export default function ServicesPage() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center rounded-full border border-border/50 bg-muted/30 px-4 py-2 text-sm font-medium text-muted-foreground mb-8">
                 <span className="relative flex h-2 w-2 mr-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--green-accent)] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--green-accent)]"></span>
                 </span>
                 Professional Services
               </div>
               <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-                My <span className="font-medium text-primary">Services</span>
+                My <span className="font-medium text-[var(--green-accent)]">Services</span>
               </h1>
               <p className="text-muted-foreground/80 text-lg font-light max-w-2xl mx-auto leading-relaxed">
                 Comprehensive solutions across AI systems, web development, and infrastructure automation tailored to
@@ -107,18 +107,18 @@ export default function ServicesPage() {
                 return (
                   <Card
                     key={index}
-                    className="group border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20"
+                    className="group border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-[var(--green-accent)]/5 transition-all duration-300 hover:border-[var(--green-accent)]/20"
                   >
                     <CardHeader>
                       <div className="flex items-center gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                          <Icon className="h-6 w-6 text-primary" />
+                        <div className="w-12 h-12 rounded-full bg-[var(--green-accent)]/10 flex items-center justify-center group-hover:bg-[var(--green-accent)]/20 transition-colors">
+                          <Icon className="h-6 w-6 text-[var(--green-accent)]" />
                         </div>
                         <div className="flex-1">
-                          <CardTitle className="font-medium text-xl group-hover:text-primary transition-colors">
+                          <CardTitle className="font-medium text-xl group-hover:text-[var(--green-accent)] transition-colors">
                             {service.title}
                           </CardTitle>
-                          <p className="text-primary font-medium text-sm">{service.pricing}</p>
+                          <p className="text-[var(--green-accent)] font-medium text-sm">{service.pricing}</p>
                         </div>
                       </div>
                       <CardDescription className="font-light text-base">{service.description}</CardDescription>
@@ -129,7 +129,7 @@ export default function ServicesPage() {
                         <ul className="space-y-2">
                           {service.features.map((feature, i) => (
                             <li key={i} className="flex items-start">
-                              <CheckCircle className="h-4 w-4 text-primary mt-0.5 mr-3 flex-shrink-0" />
+                              <CheckCircle className="h-4 w-4 text-[var(--green-accent)] mt-0.5 mr-3 flex-shrink-0" />
                               <span className="text-muted-foreground/80 font-light text-sm">{feature}</span>
                             </li>
                           ))}
@@ -163,7 +163,7 @@ export default function ServicesPage() {
             <div className="mb-16">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-light mb-4 tracking-tight">
-                  My <span className="font-medium text-primary">Process</span>
+                  My <span className="font-medium text-[var(--green-accent)]">Process</span>
                 </h2>
                 <p className="text-muted-foreground/80 font-light">
                   How I work with clients to deliver exceptional results.
@@ -179,8 +179,8 @@ export default function ServicesPage() {
                 ].map((phase, index) => (
                   <Card key={index} className="border-border/50 bg-background/80 backdrop-blur-sm text-center">
                     <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                        <span className="text-primary font-bold">{phase.step}</span>
+                      <div className="w-12 h-12 rounded-full bg-[var(--green-accent)]/10 flex items-center justify-center mx-auto mb-4">
+                        <span className="text-[var(--green-accent)] font-bold">{phase.step}</span>
                       </div>
                       <h3 className="font-medium mb-2">{phase.title}</h3>
                       <p className="text-muted-foreground/80 font-light text-sm">{phase.description}</p>
@@ -191,9 +191,9 @@ export default function ServicesPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="text-center bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 border border-primary/20">
+            <div className="text-center bg-gradient-to-r from-[var(--green-accent)]/5 to-[var(--green-accent)]/10 rounded-2xl p-8 border border-[var(--green-accent)]/20">
               <h2 className="text-2xl font-light mb-4 tracking-tight">
-                Ready to get <span className="font-medium text-primary">started</span>?
+                Ready to get <span className="font-medium text-[var(--green-accent)]">started</span>?
               </h2>
               <p className="text-muted-foreground/80 mb-6 font-light max-w-2xl mx-auto">
                 Let's discuss your project requirements and how I can help bring your ideas to life with cutting-edge
@@ -206,7 +206,7 @@ export default function ServicesPage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-border/50 hover:border-primary/50">
+                <Button asChild variant="outline" size="lg" className="border-border/50 hover:border-[var(--green-accent)]/50">
                   <a href="mailto:sebsalgado44@gmail.com">Send Email Directly</a>
                 </Button>
               </div>

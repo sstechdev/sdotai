@@ -71,7 +71,7 @@ export default function SupportPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Navigation />
+      <Navigation conversationStarted={false} />
 
       <PageTransition>
         <div className="container py-12">
