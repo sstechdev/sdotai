@@ -2,14 +2,17 @@
   "name": "Sebastian Salgado Site",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ingest:knowledge": "tsx scripts/ingest_knowledge.ts"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
+    "@google/genai": "^1.5.1",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "1.2.2",
     "@radix-ui/react-alert-dialog": "1.1.4",
@@ -39,6 +42,7 @@
     "@radix-ui/react-toggle-group": "1.1.1",
     "@radix-ui/react-tooltip": "1.1.6",
     "@studio-freight/lenis": "latest",
+    "@supabase/supabase-js": "^2.50.0",
     "@tailwindcss/typography": "latest",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
@@ -64,11 +68,16 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@solana/wallet-standard-features": "^1.3.0",
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.5.0",
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
   }
 }

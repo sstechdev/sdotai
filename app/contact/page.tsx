@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Mail, MapPin, Copy, Check, Github, Linkedin, Twitter, Instagram, Phone, Calendar } from "lucide-react"
+import { ArrowLeft, Mail, MapPin, Copy, Check, Github, Linkedin, Twitter, Instagram, Phone, Calendar, Briefcase } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
@@ -104,7 +104,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Navigation />
+      <Navigation conversationStarted={true} />
 
       <PageTransition>
         <div className="container py-12">
@@ -132,56 +132,80 @@ export default function ContactPage() {
               </p>
             </div>
 
-            {/* Contact Information */}
-            <div className="mb-16">
-              <h2 className="text-2xl font-light mb-8 text-center tracking-tight">
-                Contact <span className="font-medium text-primary">Information</span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {contactInfo.map((contact) => {
-                  const Icon = contact.icon
-                  const isCopied = copiedItem === contact.id
+            <p className="text-muted-foreground/80 text-sm mb-6">
+              Feel free to reach out to me for collaborations, inquiries, or just to say hello!
+            </p>
 
-                  return (
-                    <Card
-                      key={contact.id}
-                      className="border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20"
-                    >
-                      <CardContent className="p-4">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-3 flex-1 min-w-0">
-                            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                              <Icon className="h-5 w-5 text-primary" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-light text-foreground mb-4">Contact Information</h3>
+                <div className="space-y-3 text-muted-foreground/90 text-sm">
+                  <div className="flex items-center">
+                    <Mail className="mr-3 h-5 w-5 text-primary" />
+                    <p>sebsalgado44@gmail.com</p>
+                  </div>
+                  <div className="flex items-center">
+                    <MapPin className="mr-3 h-5 w-5 text-primary" />
+                    <p>Madrid, Spain</p>
+                  </div>
+                  <div className="flex items-center">
+                    <Briefcase className="mr-3 h-5 w-5 text-primary" />
+                    <p>Open to new opportunities</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                {/* Contact Information */}
+                <div className="mb-16">
+                  <h2 className="text-2xl font-light mb-8 text-center tracking-tight">
+                    Contact <span className="font-medium text-primary">Information</span>
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {contactInfo.map((contact) => {
+                      const Icon = contact.icon
+                      const isCopied = copiedItem === contact.id
+
+                      return (
+                        <Card
+                          key={contact.id}
+                          className="border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20"
+                        >
+                          <CardContent className="p-4">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center space-x-3 flex-1 min-w-0">
+                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                  <Icon className="h-5 w-5 text-primary" />
+                                </div>
+                                <div className="min-w-0 flex-1">
+                                  <p className="text-sm font-medium text-muted-foreground">{contact.label}</p>
+                                  <p className="text-sm font-light truncate">{contact.value}</p>
+                                </div>
+                              </div>
+                              <div className="flex gap-1 ml-2">
+                                <Button
+                                  variant="ghost"
+                                  size="icon"
+                                  className="h-8 w-8"
+                                  onClick={() => copyToClipboard(contact.value, contact.id)}
+                                >
+                                  {isCopied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                                </Button>
+                                <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
+                                  <a href={contact.href} target="_blank" rel="noopener noreferrer">
+                                    <Icon className="h-4 w-4" />
+                                  </a>
+                                </Button>
+                              </div>
                             </div>
-                            <div className="min-w-0 flex-1">
-                              <p className="text-sm font-medium text-muted-foreground">{contact.label}</p>
-                              <p className="text-sm font-light truncate">{contact.value}</p>
-                            </div>
-                          </div>
-                          <div className="flex gap-1 ml-2">
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="h-8 w-8"
-                              onClick={() => copyToClipboard(contact.value, contact.id)}
-                            >
-                              {isCopied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
-                            </Button>
-                            <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-                              <a href={contact.href} target="_blank" rel="noopener noreferrer">
-                                <Icon className="h-4 w-4" />
-                              </a>
-                            </Button>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  )
-                })}
+                          </CardContent>
+                        </Card>
+                      )
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
-
-           
 
             {/* FAQ Section */}
             <div className="mb-16">

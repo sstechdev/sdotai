@@ -1,108 +1,52 @@
-import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { PageTransition } from "@/components/page-transition"
+"use client";
+
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function BlogPage() {
-  // Sample blog posts data
-  const posts = [
-    {
-      id: 1,
-      title: "The Future of Web Development",
-      excerpt: "Exploring the latest trends and technologies shaping the future of web development.",
-      date: "June 12, 2023",
-      image: "/placeholder.svg?height=200&width=400&text=Blog+1",
-      category: "Development",
-    },
-    {
-      id: 2,
-      title: "Designing for Accessibility",
-      excerpt: "How to create inclusive digital experiences that work for everyone.",
-      date: "May 28, 2023",
-      image: "/placeholder.svg?height=200&width=400&text=Blog+2",
-      category: "Design",
-    },
-    {
-      id: 3,
-      title: "The Rise of AI in Creative Industries",
-      excerpt: "How artificial intelligence is transforming design, content creation, and more.",
-      date: "May 15, 2023",
-      image: "/placeholder.svg?height=200&width=400&text=Blog+3",
-      category: "Technology",
-    },
-    {
-      id: 4,
-      title: "Building Performant Web Applications",
-      excerpt: "Strategies and techniques for optimizing web application performance.",
-      date: "April 30, 2023",
-      image: "/placeholder.svg?height=200&width=400&text=Blog+4",
-      category: "Development",
-    },
-    {
-      id: 5,
-      title: "The Psychology of User Experience",
-      excerpt: "Understanding how psychology principles can improve your UX design.",
-      date: "April 18, 2023",
-      image: "/placeholder.svg?height=200&width=400&text=Blog+5",
-      category: "Design",
-    },
-    {
-      id: 6,
-      title: "From Concept to Launch: Project Management for Developers",
-      excerpt: "A comprehensive guide to managing development projects effectively.",
-      date: "April 5, 2023",
-      image: "/placeholder.svg?height=200&width=400&text=Blog+6",
-      category: "Career",
-    },
-  ]
+  // Placeholder blog posts for demonstration
+  const blogPosts = [
+    { id: 1, title: "Building AI Agents for Customer Service", date: "Dec 10, 2024", category: "AI/ML" },
+    { id: 2, title: "AWS Infrastructure Best Practices", date: "Dec 15, 2024", category: "Cloud" },
+    { id: 3, title: "Modern Full-Stack Development", date: "Dec 20, 2024", category: "Development" },
+  ];
 
   return (
-    <PageTransition>
-      <div className="container py-12">
-        <div className="flex items-center mb-8">
-          <Button variant="ghost" size="sm" asChild className="mr-4">
-            <Link href="/">
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back
-            </Link>
-          </Button>
-          <h1 className="text-3xl font-bold">Blog</h1>
-        </div>
-
-        <div className="mb-12">
-          <p className="text-muted-foreground max-w-2xl">
-            Thoughts, insights, and tutorials on development, design, and technology.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <Link
-              href={`/blog/${post.id}`}
-              key={post.id}
-              className="group block overflow-hidden rounded-lg border bg-background transition-all hover:shadow-lg"
-            >
-              <div className="aspect-video w-full overflow-hidden">
-                <img
-                  src={post.image || "/placeholder.svg"}
-                  alt={post.title}
-                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded-full">
-                    {post.category}
-                  </span>
-                  <span className="text-sm text-muted-foreground">{post.date}</span>
-                </div>
-                <h3 className="font-semibold text-xl group-hover:text-primary transition-colors">{post.title}</h3>
-                <p className="mt-2 text-muted-foreground">{post.excerpt}</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-background font-sans">
+      <h1 className="text-4xl font-light tracking-tight text-foreground mb-8">
+        All <span className="font-medium text-primary">Essays</span>
+      </h1>
+      <p className="text-muted-foreground/80 mb-12 text-base font-light max-w-xl mx-auto leading-relaxed">
+        Thoughts, insights, and essays on development, design, technology, and more.
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl w-full">
+        {blogPosts.map((post) => (
+          <Link
+            key={post.id}
+            href={`/blog/${post.id}`}
+            className="group block p-6 rounded-lg border border-border/50 bg-card/80 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:border-primary/20 hover:-translate-y-1"
+          >
+            <h3 className="font-medium text-lg text-foreground group-hover:text-primary transition-colors mb-2">
+              {post.title}
+            </h3>
+            <p className="text-sm text-muted-foreground font-light leading-relaxed">
+              Category: {post.category} - {post.date}
+            </p>
+            <span className="mt-4 inline-flex items-center text-primary text-sm font-medium">
+              Read More <ArrowLeft className="h-4 w-4 ml-1 rotate-180" />
+            </span>
+          </Link>
+        ))}
       </div>
-    </PageTransition>
-  )
+      <div className="mt-12">
+        <Button asChild variant="outline" className="group border-border/50 hover:border-primary/50">
+          <Link href="/">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            <span>Back to Home</span>
+          </Link>
+        </Button>
+      </div>
+    </div>
+  );
 }
