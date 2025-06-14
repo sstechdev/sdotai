@@ -1,10 +1,12 @@
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Navigation } from "@/components/navigation"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col items-center p-4 bg-background font-sans">
+      <Navigation />
       <div className="w-full max-w-4xl bg-card rounded-lg shadow-md p-8 mt-12 mb-8 border border-border/50">
         <Button variant="outline" size="sm" asChild className="mb-6 group border-border/50 hover:border-[var(--green-accent)]/50">
           <Link href="/">

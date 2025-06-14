@@ -77,7 +77,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background font-sans">
-      <Navigation conversationStarted={conversationStarted} />
+      <Navigation />
 
       <main className={`flex flex-1 flex-col items-center p-4 transition-all duration-500 ${conversationStarted ? 'justify-start pt-48' : 'justify-center pt-48'}`}>
         <section className={`w-full max-w-2xl text-center transition-all duration-500 ${conversationStarted ? 'mb-4' : 'mb-16'}`}>

@@ -13,11 +13,8 @@ export default function ServicesPage() {
       description: "End-to-end web applications with modern frameworks and scalable architecture",
       icon: Code,
       features: [
-        "React & Next.js frontend development",
-        "Node.js & Express backend systems",
-        "Database design and optimization",
+        "User Experience first philosophy",
         "API development and integration",
-        "Responsive and accessible UI/UX",
         "Performance optimization",
       ],
       technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB"],
@@ -38,21 +35,7 @@ export default function ServicesPage() {
       technologies: ["OpenAI API", "RAG", "AI Agents", "Google Speech API", "ElevenLabs", "Python"],
       pricing: "",
     },
-    {
-      title: "Workflow Automations",
-      description: "Python-based automation systems for business processes and data management",
-      icon: Cog,
-      features: [
-        "Business process automation",
-        "Data migration and synchronization",
-        "API integration and orchestration",
-        "Custom automation scripts",
-        "Monitoring and alerting systems",
-        "Performance optimization",
-      ],
-      technologies: ["Python", "Flask", "FastAPI", "Celery", "Redis", "PostgreSQL"],
-      pricing: "",
-    },
+    
     {
       title: "IT Infrastructure & CI/CD",
       description: "Cloud infrastructure management, deployment pipelines, and system optimization",
@@ -66,13 +49,13 @@ export default function ServicesPage() {
         "Infrastructure as Code (IaC)",
       ],
       technologies: ["AWS", "Azure", "Docker", "Kubernetes", "Terraform", "CI/CD"],
-      pricing: "Starting from €2,000",
+      pricing: "",
     },
   ]
 
   return (
     <div className="flex min-h-screen flex-col">
-     <Navigation conversationStarted={false} />
+     <Navigation />
 
       <PageTransition>
         <div className="container py-12">
@@ -170,22 +153,29 @@ export default function ServicesPage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {/* Horizontal Timeline Container */}
+              <div className="relative flex justify-between items-start pt-10 pb-10">
+                {/* Timeline Line */}
+                <div className="absolute inset-x-0 top-1/2 h-0.5 bg-border/50"></div>
+
                 {[
                   { step: "01", title: "Discovery", description: "Understanding your needs and project requirements" },
                   { step: "02", title: "Planning", description: "Creating detailed project roadmap and timeline" },
                   { step: "03", title: "Development", description: "Building your solution with regular updates" },
                   { step: "04", title: "Delivery", description: "Testing, deployment, and ongoing support" },
                 ].map((phase, index) => (
-                  <Card key={index} className="border-border/50 bg-background/80 backdrop-blur-sm text-center">
-                    <CardContent className="p-6">
-                      <div className="w-12 h-12 rounded-full bg-[var(--green-accent)]/10 flex items-center justify-center mx-auto mb-4">
-                        <span className="text-[var(--green-accent)] font-bold">{phase.step}</span>
-                      </div>
-                      <h3 className="font-medium mb-2">{phase.title}</h3>
+                  <div key={index} className="relative z-10 flex flex-col items-center w-1/4 px-2">
+                    {/* Timeline Marker (Circle) */}
+                    <div className="w-10 h-10 rounded-full bg-[var(--green-accent)] flex items-center justify-center mb-4 transform -translate-y-1/2 border-4 border-background shadow-md">
+                      <span className="text-[var(--green-accent-foreground)] font-bold text-base">{phase.step}</span>
+                    </div>
+
+                    {/* Card Content */}
+                    <Card className="border-border/50 bg-background/80 backdrop-blur-sm text-center p-4">
+                      <h3 className="font-medium text-lg mb-2">{phase.title}</h3>
                       <p className="text-muted-foreground/80 font-light text-sm">{phase.description}</p>
-                    </CardContent>
-                  </Card>
+                    </Card>
+                  </div>
                 ))}
               </div>
             </div>
@@ -193,21 +183,17 @@ export default function ServicesPage() {
             {/* CTA Section */}
             <div className="text-center bg-gradient-to-r from-[var(--green-accent)]/5 to-[var(--green-accent)]/10 rounded-2xl p-8 border border-[var(--green-accent)]/20">
               <h2 className="text-2xl font-light mb-4 tracking-tight">
-                Ready to get <span className="font-medium text-[var(--green-accent)]">started</span>?
+                Contact <span className="font-medium text-[var(--green-accent)]">Me</span>
               </h2>
               <p className="text-muted-foreground/80 mb-6 font-light max-w-2xl mx-auto">
-                Let's discuss your project requirements and how I can help bring your ideas to life with cutting-edge
-                technology solutions.
+                Let's discuss how I can help with your next project.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
+              <div className="flex justify-center">
+                <Button asChild size="lg" className="group bg-[var(--green-accent)] text-[var(--green-accent-foreground)] hover:bg-[var(--green-accent)]/90 hover:shadow-lg hover:shadow-[var(--green-accent)]/20 transition-all duration-300">
                   <Link href="/contact">
                     Get in Touch
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg" className="border-border/50 hover:border-[var(--green-accent)]/50">
-                  <a href="mailto:sebsalgado44@gmail.com">Send Email Directly</a>
                 </Button>
               </div>
             </div>

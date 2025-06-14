@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
-export function Navigation({ conversationStarted }: { conversationStarted: boolean }) {
+export function Navigation() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -28,13 +28,10 @@ export function Navigation({ conversationStarted }: { conversationStarted: boole
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="text-xl tracking-wide group">
-          <p className="text-foreground font-light text-2xl">Sebastian.<span className="font-medium text-[var(--green-accent)]">ai</span></p>
+          <p className="text-foreground font-light text-2xl">sebastian.<span className="font-medium text-[var(--green-accent)]">ai</span></p>
         </Link>
 
-        <nav className={cn(
-          "flex items-center gap-4 transition-all duration-500",
-          conversationStarted ? 'opacity-100 visible' : 'opacity-0 invisible'
-        )}>
+        <nav className="flex items-center gap-4 transition-all duration-500">
           <Button
             key="services"
             variant="ghost"

@@ -104,7 +104,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Navigation conversationStarted={true} />
+      <Navigation />
 
       <PageTransition>
         <div className="container py-12">

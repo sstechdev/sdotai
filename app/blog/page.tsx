@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Navigation } from "@/components/navigation";
 
 export default function BlogPage() {
   // Placeholder blog posts for demonstration
@@ -13,7 +14,8 @@ export default function BlogPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-background font-sans">
+    <div className="min-h-screen flex flex-col items-center p-4 bg-background font-sans">
+      <Navigation />
       <h1 className="text-4xl font-light tracking-tight text-foreground mb-8">
         All <span className="font-medium text-primary">Essays</span>
       </h1>
