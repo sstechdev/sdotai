@@ -15,7 +15,8 @@ export async function POST(req: Request) {
 
     const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-    // Rate limiting logic
+    // Rate limiting logic - Temporarily commented out for testing
+    /*
     const { data: rateLimitData, error: rateLimitError } = await supabase
       .from('rate_limits')
       .select('*')
@@ -55,6 +56,7 @@ export async function POST(req: Request) {
     } else {
       await supabase.from('rate_limits').insert({ ip_address: ipAddress, call_count: newCallCount, last_call_at: now.toISOString(), blocked_until: null });
     }
+    */
 
     // 1. Extract the prompt from the request body
     const { prompt } = await req.json();

@@ -169,7 +169,7 @@ export default function ContactPage() {
                       return (
                         <Card
                           key={contact.id}
-                          className="border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-[var(--green-accent)]/5 transition-all duration-300 hover:border-[var(--green-accent)]/20"
+                          className="border-border/50 bg-card hover:shadow-lg hover:shadow-[var(--green-accent)]/5 transition-all duration-300 hover:border-[var(--green-accent)]/20"
                         >
                           <CardContent className="p-4">
                             <div className="flex items-center justify-between">
@@ -218,7 +218,7 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 {faqs.map((faq, index) => (
-                  <Card key={index} className="border-border/50 bg-background/80 backdrop-blur-sm">
+                  <Card key={index} className="border-border/50 bg-card">
                     <CardHeader>
                       <CardTitle className="font-medium text-lg">{faq.question}</CardTitle>
                     </CardHeader>

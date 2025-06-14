@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Home, Briefcase, Wrench, BookOpen, Mail, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { cn } from "@/lib/utils"
 
 export function Navigation() {
@@ -28,14 +27,14 @@ export function Navigation() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="text-xl tracking-wide group">
-          <p className="text-foreground font-light text-2xl">sebastian.<span className="font-medium text-[var(--green-accent)]">ai</span></p>
+          <p className="text-foreground font-light text-2xl">sebastian.<span className="font-medium text-primary">ai</span></p>
         </Link>
 
         <nav className="flex items-center gap-4 transition-all duration-500">
           <Button
             key="services"
             variant="ghost"
-            className="text-muted-foreground hover:text-[var(--green-accent)] transition-colors text-sm px-2"
+            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
             asChild
           >
             <Link href="/services">Services</Link>
@@ -43,16 +42,24 @@ export function Navigation() {
           <Button
             key="projects"
             variant="ghost"
-            className="text-muted-foreground hover:text-[var(--green-accent)] transition-colors text-sm px-2"
+            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
             asChild
           >
             
             <Link href="/about">About</Link>
           </Button>
           <Button
+            key="experience"
+            variant="ghost"
+            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
+            asChild
+          >
+            <Link href="/experience">Experience</Link>
+          </Button>
+          <Button
             key="contact"
             variant="ghost"
-            className="text-muted-foreground hover:text-[var(--green-accent)] transition-colors text-sm px-2"
+            className="text-muted-foreground hover:text-primary transition-colors text-sm px-2"
             asChild
           >
             <Link href="/contact">Contact</Link>
@@ -60,7 +67,7 @@ export function Navigation() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
+          
         </div>
       </div>
     </header>

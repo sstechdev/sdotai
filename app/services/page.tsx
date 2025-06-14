@@ -90,7 +90,7 @@ export default function ServicesPage() {
                 return (
                   <Card
                     key={index}
-                    className="group border-border/50 bg-background/80 backdrop-blur-sm hover:shadow-lg hover:shadow-[var(--green-accent)]/5 transition-all duration-300 hover:border-[var(--green-accent)]/20"
+                    className="group border-border/50 bg-card hover:shadow-lg hover:shadow-[var(--green-accent)]/5 transition-all duration-300 hover:border-[var(--green-accent)]/20"
                   >
                     <CardHeader>
                       <div className="flex items-center gap-4 mb-4">

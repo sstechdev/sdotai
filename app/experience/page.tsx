@@ -132,7 +132,7 @@ export default function ExperiencePage() {
                 Professional Journey
               </div>
               <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
-                Work <span className="font-medium text-primary">Experience</span>
+                Work <span className="font-medium text-foreground">Experience</span>
               </h1>
               <p className="text-muted-foreground/80 text-lg font-light max-w-2xl mx-auto leading-relaxed">
                 My journey from financial analysis to AI-powered software development and infrastructure engineering.
@@ -145,7 +145,7 @@ export default function ExperiencePage() {
                 <div key={exp.id} className="relative pl-8 border-l-2 border-border/30 last:border-l-0">
                   <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-6 border-4 border-background shadow-lg"></div>
 
-                  <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20 group">
+                  <div className="bg-card border border-border/50 rounded-2xl p-8 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20 group">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
@@ -222,13 +222,13 @@ export default function ExperiencePage() {
             {/* Skills Section */}
             <div className="mb-16">
               <h2 className="text-3xl font-light mb-8 text-center tracking-tight">
-                Technical <span className="font-medium text-primary">Skills</span>
+                Technical <span className="font-medium text-foreground">Skills</span>
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {skills.map((skillGroup) => (
                   <div
                     key={skillGroup.category}
-                    className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20 group"
+                    className="bg-card border border-border/50 rounded-2xl p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20 group"
                   >
                     <h3 className="font-medium mb-6 text-primary group-hover:text-primary/80 transition-colors">
                       {skillGroup.category}
@@ -252,13 +252,13 @@ export default function ExperiencePage() {
             {/* Education Section */}
             <div className="mb-16">
               <h2 className="text-3xl font-light mb-8 text-center tracking-tight">
-                <span className="font-medium text-primary">Education</span>
+                <span className="font-medium text-foreground">Education</span>
               </h2>
               <div className="space-y-6">
                 {education.map((edu, index) => (
                   <div
                     key={index}
-                    className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-2xl p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20"
+                    className="bg-card border border-border/50 rounded-2xl p-6 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 hover:border-primary/20"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                       <div>
@@ -302,7 +302,7 @@ export default function ExperiencePage() {
                 Want to work together?
               </div>
               <h2 className="text-3xl font-light mb-6 tracking-tight">
-                Let's <span className="font-medium text-primary">Collaborate</span>
+                Let's <span className="font-medium text-foreground">Collaborate</span>
               </h2>
              
               <Button asChild size="lg">
